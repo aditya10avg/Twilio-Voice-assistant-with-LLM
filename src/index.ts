@@ -12,7 +12,14 @@ app.get('/call', (c) => {
 
 app.post('/call', (c) => {
   const Voicemessage= new twiml.VoiceResponse();
-  Voicemessage.say('Hello, this is a test call from Twilio. Goodbye!');
+  Voicemessage.say('Hello, How are you!');
+  Voicemessage.gather({
+    input: ["speech"], //Try using speech dtmf instead of speech for collecting both the speech and dtmf input i.e pressing numbers for particular services. 
+    speechTimeout: "auto", // It will stop speech recognition after 1 second of silence. 
+    speechModel: "experimental_conversations",
+    enhanced: true,
+    action:'/respond' // This is the endpoint where the speech input will be sent to.
+  })
   c.header('Content-Type','application/xml');
   return c.body(Voicemessage.toString());
 })
