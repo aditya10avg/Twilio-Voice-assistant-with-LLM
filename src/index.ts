@@ -11,8 +11,10 @@ app.get('/call', (c) => {
 })
 
 app.post('/call', (c) => {
-  const Voicemessage= twiml.newVoiceResponse();
-  
+  const Voicemessage= new twiml.VoiceResponse();
+  Voicemessage.say('Hello, this is a test call from Twilio. Goodbye!');
+  c.header('Content-Type','application/xml');
+  return c.body(Voicemessage.toString());
 })
 
 // Basic route to confirm server is running
