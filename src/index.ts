@@ -5,10 +5,6 @@ import {twiml} from 'twilio'
 
 const app = new Hono()
 
-// Twilio call handling endpoint
-app.get('/call', (c) => {
-  return c.text('Call endpoint is working')
-})
 
 app.post('/call', (c) => {
   const Voicemessage= new twiml.VoiceResponse();
@@ -23,6 +19,18 @@ app.post('/call', (c) => {
   c.header('Content-Type','application/xml');
   return c.body(Voicemessage.toString());
 })
+app.post('/respond',async (c) => {
+  const formData = await c.req.formData()
+  const voiceInput = formData.get('SpeechResult')?.toString()!
+
+  // Here we will set up the LLM model to understand the speech input and respond accordingly.
+
+  const Voicemessage= new twiml.VoiceResponse();
+  Voicemessage.say(voiceInput);
+  c.header('Content-Type','application/xml');
+  return c.body(Voicemessage.toString());
+})
+  
 
 // Basic route to confirm server is running
 app.get('/', (c) => {
