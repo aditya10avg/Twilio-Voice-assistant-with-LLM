@@ -40,17 +40,20 @@ Before running the project, ensure you have the following:
 git clone <repository-url>
 cd <project-folder>
 
-Commands for installation 
+## 2. Install Dependencies
+```bash
+bun install ```
 
-npm init -y
-npm install hono
-npm install -D typescript @types/node ts-node
+## 3.Setup Environment Variables
+Create a .env file in the project root and add the following:
+```bash
+OPENAI_API_KEY=<your_openai_api_key>
+TWILIO_ACCOUNT_SID=<your_twilio_account_sid>
+TWILIO_AUTH_TOKEN=<your_twilio_auth_token>
+TWILIO_PHONE_NUMBER=<your_twilio_phone_number>
+```
 
-bun run start 
-check package.json - It must have 
-"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "bun src/index2.ts",
-    "dev": "bun watch src/index2.ts" 
-    to run . 
-
+## 4. Run the Server
+``` bash 
+bun run index.ts
+``` 
