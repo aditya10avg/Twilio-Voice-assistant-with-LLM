@@ -41,11 +41,11 @@ git clone <repository-url>
 cd <project-folder>
 ```
 
-## 2. Install Dependencies
+### 2. Install Dependencies
 ```bash
 bun install ```
 
-## 3.Setup Environment Variables
+### 3.Setup Environment Variables
 Create a .env file in the project root and add the following:
 ```bash
 OPENAI_API_KEY=<your_openai_api_key>
@@ -54,15 +54,35 @@ TWILIO_AUTH_TOKEN=<your_twilio_auth_token>
 TWILIO_PHONE_NUMBER=<your_twilio_phone_number>
 ```
 
-## 4. Run the Server
+### 4. Run the Server
 ``` bash 
 bun run index.ts
 ``` 
 
 This will run the server on http://localhost:3000.
 
-## 5. Ngrok for public URL
+### 5. Ngrok for public URL
 Use Ngrok for getting a public URL and Use that URL/call in the server endpoint line given in call.py
 `` bash
  ngrok http http://localhost:3000
 ```
+
+
+## Endpoints
+### /call (POST)
+Purpose: Handles incoming calls, starts the conversation, and gathers user input via speech.
+Response: Returns TwiML instructions for Twilio to process.
+
+### /respond (POST)
+Purpose: Processes the user's speech input and sends it to OpenAI to generate a response. The conversation continues seamlessly by redirecting back to /call.
+
+### / (GET)
+Purpose: Health check to ensure the server is running.
+
+### Outbound Call Script
+You can make outbound calls and connect them to the voice assistant using the provided Python script.
+Use 
+``` bash
+python3 call.py
+```
+
