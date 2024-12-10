@@ -43,7 +43,8 @@ cd <project-folder>
 
 ### 2. Install Dependencies
 ```bash
-bun install ```
+bun install
+```
 
 ### 3.Setup Environment Variables
 Create a .env file in the project root and add the following:
