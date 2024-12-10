@@ -36,8 +36,10 @@ Before running the project, ensure you have the following:
 
 ### 1. Clone the Repository
 
+```bash
 git clone <repository-url>
-cd <project-folder> 
+cd <project-folder>
+```
 
 ### 2. Install Dependencies
 ```bash
