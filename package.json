@@ -14,6 +14,7 @@
   "devDependencies": {
     "@types/node": "^22.10.1",
     "@types/twilio": "^3.19.3",
+    "bun-types": "^1.1.38",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
@@ -21,10 +22,13 @@
     "acorn": "^8.14.0",
     "acorn-walk": "^8.3.4",
     "arg": "^4.1.3",
+    "bun": "^1.1.38",
     "create-require": "^1.1.1",
     "diff": "^4.0.2",
+    "dotenv": "^16.4.7",
     "hono": "^4.6.12",
     "make-error": "^1.3.6",
+    "openai": "^4.76.0",
     "undici-types": "^6.20.0",
     "v8-compile-cache-lib": "^3.0.1",
     "yn": "^3.1.1"

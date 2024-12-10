@@ -2,6 +2,7 @@
     "compilerOptions": {
       "target": "es2020",
       "module": "commonjs",
+      "types": ["bun-types"],
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
