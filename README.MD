@@ -64,10 +64,9 @@ This will run the server on http://localhost:3000.
 
 ### 5. Ngrok for public URL
 Use Ngrok for getting a public URL and Use that URL/call in the server endpoint line given in call.py
-`` bash
- ngrok http http://localhost:3000
+```bash
+ngrok http http://localhost:3000
 ```
-
 
 ## Endpoints
 ### /call (POST)
