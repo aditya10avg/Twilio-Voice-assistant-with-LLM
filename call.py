@@ -27,6 +27,6 @@ def make_call(to_phone_number, server_url):
 
 # Example usage
 to_phone_number = "+918767057291"  
-server_url = "https://0cbf-43-241-130-246.ngrok-free.app/call"
+server_url = "input the url/call"
 
 make_call(to_phone_number, server_url)
