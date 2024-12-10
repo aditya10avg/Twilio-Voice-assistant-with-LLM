@@ -86,3 +86,104 @@ Use
 python3 call.py
 ```
 
+
+markdown
+Copy code
+# Twilio Voice Assistant with OpenAI Integration
+
+This project is a voice assistant that uses **Twilio**, **OpenAI's GPT-3.5 Turbo**, and **Hono (Bun)** to facilitate a human-like conversational experience over a phone call. The assistant can qualify leads by asking questions, responding intelligently, and continuing conversations seamlessly. The project includes functionality for both incoming and outbound calls.
+
+---
+
+## Features
+
+- **AI-Powered Conversations**: Uses OpenAI to generate human-like responses based on user inputs.
+- **Twilio Voice API**: Handles calls and gathers speech input from users.
+- **Hono Framework**: Built on Bun for high-performance HTTP server handling.
+- **Session Persistence**: Manages conversation history using cookies to ensure continuity.
+- **Outbound Calls**: Includes a Python script to make calls and connect them to the assistant.
+
+---
+
+## Prerequisites
+
+Before running the project, ensure you have the following:
+
+1. **Twilio Account**:
+   - Get a Twilio phone number.
+   - Note your `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN`.
+
+2. **OpenAI API Key**:
+   - Sign up at [OpenAI](https://platform.openai.com) and generate an API key.
+
+3. **Environment Setup**:
+   - Install **Bun** ([Get Bun](https://bun.sh)).
+   - Install **Node.js** (optional, for related tools).
+   - Install **Python** for the outbound call script.
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+2. Install Dependencies
+bash
+Copy code
+bun install
+3. Setup Environment Variables
+Create a .env file in the project root and add the following:
+
+env
+Copy code
+OPENAI_API_KEY=<your_openai_api_key>
+TWILIO_ACCOUNT_SID=<your_twilio_account_sid>
+TWILIO_AUTH_TOKEN=<your_twilio_auth_token>
+TWILIO_PHONE_NUMBER=<your_twilio_phone_number>
+4. Run the Server
+Start the server using the following command:
+
+bash
+Copy code
+bun run index.ts
+This will run the server on http://localhost:3000.
+
+Endpoints
+/call (POST)
+Purpose: Handles incoming calls, starts the conversation, and gathers user input via speech.
+Response: Returns TwiML instructions for Twilio to process.
+/respond (POST)
+Purpose: Processes the user's speech input and sends it to OpenAI to generate a response. The conversation continues seamlessly by redirecting back to /call.
+/ (GET)
+Purpose: Health check to ensure the server is running.
+Outbound Call Script
+You can make outbound calls and connect them to the voice assistant using the provided Python script.
+
+## Setup
+Install dependencies:
+
+```bash
+pip install twilio python-dotenv
+```
+Create a .env file for the script:
+``` bash
+.env
+```
+``` bash
+TWILIO_ACCOUNT_SID=<your_twilio_account_sid>
+TWILIO_AUTH_TOKEN=<your_twilio_auth_token>
+TWILIO_PHONE_NUMBER=<your_twilio_phone_number>
+```
+## How It Works
+### Incoming Call:
+
+### Twilio routes the call to /call.
+The assistant greets the caller and starts gathering input.
+Input is sent to /respond, processed by OpenAI, and a response is sent back.
+The conversation continues seamlessly by redirecting back to /call.
+Outbound Call:
+
+### The Python script places a call and connects it to the /call endpoint.
