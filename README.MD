@@ -187,3 +187,27 @@ The conversation continues seamlessly by redirecting back to /call.
 Outbound Call:
 
 ### The Python script places a call and connects it to the /call endpoint.
+
+
+## Deployment
+Using Ngrok for Testing
+Expose your local server to the internet using Ngrok:
+
+```bash
+ngrok http 3000
+```
+Update the server_url in the Python script with the public URL provided by Ngrok.
+
+## Production
+For production, deploy the server to a cloud platform like AWS, GCP, or Vercel and ensure a public URL is available for Twilio to connect to.
+
+### Troubleshooting
+Twilio Error 11200: Ensure your server is publicly accessible, and the endpoint responds with valid TwiML.
+OpenAI API Error: Check your OpenAI API key and ensure you have sufficient usage quota.
+Cookies Not Persisting: Verify that hono/cookie is correctly handling session data.
+
+## Future Improvements
+Replace Twilio TTS with Eleven Labs for more natural voices.
+Use OpenAI’s Speech-to-Text API for enhanced speech recognition.
+Add support for multi-language conversations.
+Implement database storage for conversation logs.
