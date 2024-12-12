@@ -1,13 +1,13 @@
 # Twilio Voice Assistant with OpenAI Integration
 
-This project is a voice assistant that uses **Twilio**, **OpenAI's GPT-3.5 Turbo**, and **Hono (Bun)** to facilitate a human-like conversational experience over a phone call. The assistant can qualify leads by asking questions, responding intelligently, and continuing conversations seamlessly. The project includes functionality for both incoming and outbound calls.
+This project is a voice assistant that uses **Twilio**, **OpenAI's GPT-3.5 Turbo**, and **Hono (Bun)** to facilitate a human-like conversational experience over a phone call. The assistant can qualify leads by asking questions, responding intelligently, and continuing conversations seamlessly. The project includes functionality for both incoming and outbound calls. You can connect your lead sheet and Twilio outbound call to this assistant to have the conversation. 
 
 ---
 
 ## Features
 
 - **AI-Powered Conversations**: Uses OpenAI to generate human-like responses based on user inputs.
-- **Twilio Voice API**: Handles calls and gathers speech input from users.
+- **Twilio Voice API**: Handles calls and gathers user speech input.
 - **Hono Framework**: Built on Bun for high-performance HTTP server handling.
 - **Session Persistence**: Manages conversation history using cookies to ensure continuity.
 - **Outbound Calls**: Includes a Python script to make calls and connect them to the assistant.
