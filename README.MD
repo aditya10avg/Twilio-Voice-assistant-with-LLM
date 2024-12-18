@@ -28,7 +28,7 @@ Before running the project, ensure you have the following:
 3. **Environment Setup**:
    - Install **Bun** ([Get Bun](https://bun.sh)).
    - Install **Node.js** (optional, for related tools).
-   - Install **Python** for the outbound call script.
+   - Install **Python** for outbound call script.
 
 ---
 
