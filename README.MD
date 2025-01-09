@@ -77,7 +77,7 @@ Response: Returns TwiML instructions for Twilio to process.
 Purpose: Processes the user's speech input and sends it to OpenAI to generate a response. The conversation continues seamlessly by redirecting back to /call.
 
 ### / (GET)
-Purpose: Health check to ensure the server is running.
+Purpose: Health check to ensure the server is running. To see the content on the server.
 
 ### Outbound Call Script
 You can make outbound calls and connect them to the voice assistant using the provided Python script.
